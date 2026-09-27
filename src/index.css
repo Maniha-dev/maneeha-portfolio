@@ -1,11 +1,14 @@
 /* ---------- Identity Kit tokens ---------- */
 :root {
-  --color-main: #334155;      /* slate - secondary text, borders */
-  --color-text: #0F172A;      /* near-black slate - primary text */
-  --color-bg: #F8FAFC;        /* soft off-white background */
-  --color-accent: #7DD3FC;    /* sky blue - single accent */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #FEF6DC;   /* soft tint, used only for the hero section background */
+  --color-text: #0B2E38;      /* near-black teal-tinted, for real readability */
+  --color-main: #52707A;      /* muted teal-gray for secondary text */
+  --color-border: #E3EBEC;
+  --color-accent: #218DAE;    /* teal - active nav links */
+  --color-accent-cyan: #2BBBD7;  /* light tint chip background */
+  --color-accent-gold: #FFD758;  /* gold - primary CTA background */
   --color-surface: #FFFFFF;
-  --color-border: #E2E8F0;
 
   --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;

@@ -1,3 +1,6 @@
-.hero { padding-top: var(--space-5); }
+.hero {
+  padding-top: var(--space-5);
+  background: var(--color-bg-soft);
+}
 .hero h1 { max-width: 20ch; margin-bottom: var(--space-3); }
 .skills-row { margin-bottom: var(--space-3); }

@@ -34,7 +34,7 @@
 .navbar-link {
   color: var(--color-main);
 }
-.navbar-link.is-active { color: var(--color-text); }
+.navbar-link.is-active { color: var(--color-accent); }
 
 .navbar-cta {
   font-family: var(--font-body);
