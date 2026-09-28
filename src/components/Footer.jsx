@@ -1,15 +1,13 @@
-import { contactEmail } from "../data/projects";
+import { footer, siteInfo } from "../assets/assets";
 import "./Footer.css";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="page footer-inner">
-        <p className="footer-text">
-          Maneeha Nasir — BS Computer Science, LCWU
-        </p>
-        <a className="plain footer-email" href={`mailto:${contactEmail}`}>
-          {contactEmail}
+        <p className="footer-text">{footer.tagline}</p>
+        <a className="plain footer-email" href={`mailto:${siteInfo.email}`}>
+          {siteInfo.email}
         </a>
       </div>
     </footer>

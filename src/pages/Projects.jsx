@@ -1,17 +1,13 @@
 import ProjectCard from "../components/ProjectCard";
-import { projects, contactEmail } from "../data/projects";
+import { projects, projectsSection, siteInfo } from "../assets/assets";
 
 export default function Projects() {
   return (
     <>
       <section className="section">
         <div className="page">
-          <h1>What I've Built</h1>
-          <p>
-            A growing collection of real-world applications where I apply
-            frontend, backend, APIs, databases, and deployment concepts
-            while continuing to grow as a software engineer.
-          </p>
+          <h1>{projectsSection.pageTitle}</h1>
+          <p>{projectsSection.pageDescription}</p>
         </div>
       </section>
 
@@ -19,11 +15,11 @@ export default function Projects() {
         <div className="page">
           <div className="projects-grid">
             {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project._id} project={project} />
             ))}
           </div>
-          <a className="plain btn-primary" href={`mailto:${contactEmail}`}>
-            Contact Me
+          <a className="plain btn-primary" href={`mailto:${siteInfo.email}`}>
+            {projectsSection.contactAction}
           </a>
         </div>
       </section>

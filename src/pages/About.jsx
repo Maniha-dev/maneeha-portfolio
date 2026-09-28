@@ -1,14 +1,12 @@
 import { FaCheckCircle, FaCompass, FaGraduationCap } from "react-icons/fa";
-import { contactEmail } from "../data/projects";
-import { achievements } from "../data/achievements";
+import {
+  about,
+  achievements,
+  careerGoals,
+  siteInfo,
+  uiText,
+} from "../assets/assets";
 import "./Home.css";
-
-const careerGoals = [
-  "Growing as a Full-Stack Engineer",
-  "Strengthening backend and software engineering fundamentals",
-  "Expanding into Golang",
-  "Building toward AI-integrated full-stack applications",
-];
 
 export default function About() {
   return (
@@ -18,25 +16,16 @@ export default function About() {
           <div className="about-visual">
             <div className="about-orb" />
             <div className="about-frame">
-              <span>Profile</span>
+              <span>{about.imageLabel}</span>
             </div>
           </div>
 
           <div className="about-copy">
-            <span className="eyebrow-tag">About Me</span>
+            <span className="eyebrow-tag">{about.eyebrow}</span>
             <h2>
-              Turning ideas into <span className="text-accent">digital reality</span>
+              {about.headingStart} <span className="text-accent">{about.headingAccent}</span>
             </h2>
-            <p>
-              I&apos;m Maneeha Nasir, a 5th-semester BS Computer Science student at
-              Lahore College for Women University (LCWU). I started with
-              full-stack development, building real-world projects to learn by
-              doing rather than through theory alone. I build full-stack MERN
-              applications with working frontend, backend APIs, and database
-              operations, and I&apos;m currently focused on strengthening my backend
-              and software engineering fundamentals. Alongside that, I&apos;m
-              learning Golang and AI/ML.
-            </p>
+            <p>{about.bio}</p>
           </div>
         </div>
       </section>
@@ -47,31 +36,32 @@ export default function About() {
             <div>
               <div className="education-career-label">
                 <FaGraduationCap aria-hidden="true" />
-                Academics
+                {about.educationLabel}
               </div>
-              <h2>BS Computer Science</h2>
+              <h2>{about.degree}</h2>
               <p className="education-university">
-                Lahore College for Women University (LCWU)
+                {about.institution}
               </p>
             </div>
 
             <div className="education-meta">
-              <span>5th Semester</span>
-              <span>CGPA: 3.52</span>
+              {about.educationBadges.map((badge) => (
+                <span key={badge._id}>{badge.label}</span>
+              ))}
             </div>
           </article>
 
           <article className="education-career-card career-card">
             <div className="education-career-label">
               <FaCompass aria-hidden="true" />
-              Goals &amp; Vision
+              {about.careerLabel}
             </div>
-            <h2>Career Direction</h2>
+            <h2>{about.careerTitle}</h2>
             <div className="career-goals">
               {careerGoals.map((goal) => (
-                <div className="career-goal" key={goal}>
+                <div className="career-goal" key={goal._id}>
                   <FaCheckCircle aria-hidden="true" />
-                  <span>{goal}</span>
+                  <span>{goal.text}</span>
                 </div>
               ))}
             </div>
@@ -82,12 +72,12 @@ export default function About() {
       <section className="section achievements-section" id="achievements">
         <div className="page achievements-grid">
           <div className="achievements-list">
-            <span className="eyebrow-tag">Achievements</span>
-            <h2>Programs &amp; Experience</h2>
+            <span className="eyebrow-tag">{uiText.achievementsEyebrow}</span>
+            <h2>{uiText.achievementsTitle}</h2>
 
             <div className="achievement-stack">
               {achievements.map((achievement) => (
-                <article className="achievement-card" key={achievement.id}>
+                <article className="achievement-card" key={achievement._id}>
                   <div className="achievement-main">
                     <div className="achievement-icon" aria-hidden="true">
                       <svg viewBox="0 0 24 24" role="img">
@@ -105,10 +95,10 @@ export default function About() {
                     <span>{achievement.date}</span>
                     {achievement.verifyUrl ? (
                       <a href={achievement.verifyUrl} target="_blank" rel="noreferrer">
-                        Verify ↗
+                        {uiText.verifyAction}
                       </a>
                     ) : (
-                      <span className="achievement-unverified">Verify ↗</span>
+                      <span className="achievement-unverified">{uiText.verifyAction}</span>
                     )}
                   </div>
                 </article>
@@ -127,7 +117,7 @@ export default function About() {
               <div className="graduation-head" />
               <div className="graduation-body">
                 <span className="graduation-collar" />
-                <span className="graduation-badge">★</span>
+                <span className="graduation-badge">{uiText.graduationBadge}</span>
               </div>
               <div className="graduation-base" />
             </div>
@@ -137,21 +127,15 @@ export default function About() {
 
       <section className="section">
         <div className="page">
-          <h2>Practical Work</h2>
-          <p>
-            I started by building full-stack MERN applications, applying
-            frontend, backend, database, and API concepts across real
-            projects — building and deploying them for practical use rather
-            than as tutorials. I&apos;m now expanding that foundation toward
-            AI-integrated applications.
-          </p>
+          <h2>{about.practicalTitle}</h2>
+          <p>{about.practicalText}</p>
         </div>
       </section>
 
       <section className="section" style={{ borderBottom: "none" }}>
         <div className="page">
-          <a className="btn-primary" href={`mailto:${contactEmail}`}>
-            Contact Me
+          <a className="btn-primary" href={`mailto:${siteInfo.email}`}>
+            {uiText.contactAction}
           </a>
         </div>
       </section>

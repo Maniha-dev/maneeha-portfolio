@@ -1,13 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { contactEmail } from "../data/projects";
+import { navLinks, siteInfo, uiText } from "../assets/assets";
 import { useTheme } from "../context/useTheme";
 import "./Navbar.css";
-
-const navItems = [
-  { to: "/", label: "Home " },
-  { to: "/about", label: "About " },
-  { to: "/projects", label: "Projects " },
-];
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -16,13 +10,13 @@ export default function Navbar() {
     <header className="navbar">
       <div className="page navbar-inner">
         <NavLink to="/" className="plain navbar-brand">
-          &lt; Maneeha /&gt;
+          &lt; {siteInfo.name.split(" ")[0]} /&gt;
         </NavLink>
 
-        <nav className="navbar-links" aria-label="Main navigation">
-          {navItems.map((item) => (
+        <nav className="navbar-links" aria-label={uiText.navigationLabel}>
+          {navLinks.map((item) => (
             <NavLink
-              key={item.to}
+              key={item._id}
               to={item.to}
               end={item.to === "/"}
               className={({ isActive }) =>
@@ -39,8 +33,8 @@ export default function Navbar() {
             type="button"
             className="theme-toggle"
             onClick={toggleTheme}
-            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-            title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-label={theme === "light" ? uiText.switchToDark : uiText.switchToLight}
+            title={theme === "light" ? uiText.switchToDark : uiText.switchToLight}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               {theme === "light" ? (
@@ -53,8 +47,8 @@ export default function Navbar() {
               )}
             </svg>
           </button>
-          <a className="plain navbar-cta" href={`mailto:${contactEmail}`}>
-            Contact Me
+          <a className="plain navbar-cta" href={`mailto:${siteInfo.email}`}>
+            {uiText.contactAction}
           </a>
         </div>
       </div>
