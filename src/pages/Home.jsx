@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
-import EyeFollowCard from "../components/EyeFollowCard";
 import { useTheme } from "../context/useTheme";
 import {
   aboutPreview,
+  assets,
   banner,
   projects,
   projectsSection,
@@ -65,7 +65,21 @@ export default function Home() {
             <div className="hero-glow hero-glow-one" />
             <div className="hero-glow hero-glow-two" />
             <div className="avatar-card">
-              <EyeFollowCard />
+              <video
+                className="avatar-video"
+                src={assets.bannerVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+                aria-hidden="true"
+              />
+              <div className="avatar-video-content">
+                <div className="avatar-badge">{banner.avatarBadge}</div>
+                <div className="avatar-tag">{banner.avatarTag}</div>
+              </div>
             </div>
           </div>
         </div>

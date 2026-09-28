@@ -123,19 +123,13 @@
 .avatar-card {
   position: relative;
   z-index: 1;
-  width: min(30rem, 100%);
-  max-width: 480px;
-  aspect-ratio: 1 / 1.1;
+  width: min(100%, 25rem);
+  max-width: 400px;
   border-radius: 2rem;
-  padding: 1.25rem;
+  overflow: hidden;
   background: linear-gradient(135deg, rgba(11, 43, 38, 1), rgba(35, 83, 71, 0.9));
   border: 1px solid var(--color-border);
-  overflow: hidden;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .avatar-badge {
@@ -150,9 +144,29 @@
   text-transform: uppercase;
 }
 
+.avatar-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  object-fit: contain;
+}
+
+.avatar-video-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
 .avatar-face {
+  position: relative;
   width: 10rem;
   height: 10rem;
+  overflow: hidden;
   border-radius: 50%;
   display: flex;
   align-items: center;

@@ -3,10 +3,7 @@ import reactLogo from "./images/react.svg";
 import viteLogo from "./images/vite.svg";
 import favicon from "./images/favicon.svg";
 import iconsSprite from "./images/icons.svg";
-import lookCenter from "./eyes/look_center.webp";
-import lookLeft from "./eyes/look_left.webp";
-import lookRight from "./eyes/look_right.webp";
-import lookUp from "./eyes/look_up.webp";
+import bannerVideo from "./banner.mp4";
 import { FaBrain, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import {
   SiCplusplus,
@@ -20,25 +17,7 @@ import {
 } from "react-icons/si";
 
 // Edit these files to change the imported images used by the site.
-export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite };
-
-// Replace these four images together to change the cursor-following character.
-export const eyeImages = {
-  center: lookCenter,
-  left: lookLeft,
-  right: lookRight,
-  up: lookUp,
-};
-
-// Tune direction sensitivity, transition speed, and image framing here.
-export const eyeConfig = {
-  deadZone: 0.18,
-  fadeMs: 160,
-  zoom: 1.5,
-  originX: 50,
-  originY: 18,
-  useLightBg: true,
-};
+export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite, bannerVideo };
 
 // Edit site-wide identity, contact, and browser metadata here.
 export const siteInfo = {
