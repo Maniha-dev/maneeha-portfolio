@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
-import EyeTracker from "../components/EyeTracker";
+import EyeFollowCard from "../components/EyeFollowCard";
 import { useTheme } from "../context/useTheme";
 import {
   aboutPreview,
   banner,
-  assets,
-  eyeConfig,
   projects,
   projectsSection,
   siteInfo,
@@ -24,7 +21,6 @@ const featured = projects.filter((project) =>
 
 export default function Home() {
   const { theme } = useTheme();
-  const [videoFailed, setVideoFailed] = useState(false);
 
   return (
     <>
@@ -69,34 +65,7 @@ export default function Home() {
             <div className="hero-glow hero-glow-one" />
             <div className="hero-glow hero-glow-two" />
             <div className="avatar-card">
-              {videoFailed ? (
-                <>
-                  <div className="avatar-badge">{banner.avatarBadge}</div>
-                  <div className="avatar-face">
-                    <span>{banner.avatarInitial}</span>
-                  </div>
-                  <div className="avatar-tag">{banner.avatarTag}</div>
-                </>
-              ) : (
-                <>
-                  <video
-                    className="avatar-video"
-                    src={assets.bannerVideo}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    onError={() => setVideoFailed(true)}
-                    aria-hidden="true"
-                  />
-                  <EyeTracker config={eyeConfig} />
-                  <div className="avatar-video-overlay">
-                    <div className="avatar-badge">{banner.avatarBadge}</div>
-                    <div className="avatar-tag">{banner.avatarTag}</div>
-                  </div>
-                </>
-              )}
+              <EyeFollowCard />
             </div>
           </div>
         </div>

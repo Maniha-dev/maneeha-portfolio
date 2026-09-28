@@ -3,7 +3,10 @@ import reactLogo from "./images/react.svg";
 import viteLogo from "./images/vite.svg";
 import favicon from "./images/favicon.svg";
 import iconsSprite from "./images/icons.svg";
-import bannerVideo from "./banner.mp4";
+import lookCenter from "./eyes/look_center.webp";
+import lookLeft from "./eyes/look_left.webp";
+import lookRight from "./eyes/look_right.webp";
+import lookUp from "./eyes/look_up.webp";
 import { FaBrain, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import {
   SiCplusplus,
@@ -17,19 +20,24 @@ import {
 } from "react-icons/si";
 
 // Edit these files to change the imported images used by the site.
-export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite, bannerVideo };
+export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite };
 
-// Tune the eye overlay positions and movement for the banner character here.
+// Replace these four images together to change the cursor-following character.
+export const eyeImages = {
+  center: lookCenter,
+  left: lookLeft,
+  right: lookRight,
+  up: lookUp,
+};
+
+// Tune direction sensitivity, transition speed, and image framing here.
 export const eyeConfig = {
-  eyes: [
-    { x: 38, y: 34, size: 9 },
-    { x: 58, y: 34, size: 9 },
-  ],
-  eyeColor: "#ffffff",
-  pupilColor: "#111111",
-  pupilRatio: 0.5,
-  maxMove: 0.25,
-  debug: false,
+  deadZone: 0.18,
+  fadeMs: 160,
+  zoom: 1.5,
+  originX: 50,
+  originY: 18,
+  useLightBg: true,
 };
 
 // Edit site-wide identity, contact, and browser metadata here.
