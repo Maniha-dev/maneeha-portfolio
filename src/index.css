@@ -1,26 +1,35 @@
 /* ---------- Identity Kit tokens ---------- */
 :root {
-  --color-bg: #FFFFFF;
-  --color-bg-soft: #FEF6DC;   /* soft tint, used only for the hero section background */
-  --color-text: #0B2E38;      /* near-black teal-tinted, for real readability */
-  --color-main: #52707A;      /* muted teal-gray for secondary text */
-  --color-border: #E3EBEC;
-  --color-accent: #218DAE;    /* teal - active nav links */
-  --color-accent-cyan: #2BBBD7;  /* light tint chip background */
-  --color-accent-gold: #FFD758;  /* gold - primary CTA background */
-  --color-surface: #FFFFFF;
+  --color-bg: #F2F9F4;
+  --color-bg-soft: #E3F2E6;
+  --color-text: #051F20;
+  --color-main: #163832;
+  --color-border: #8EB69B;
+  --color-accent: #235347;
+  --color-surface: #DAF1DE;
+  --color-accent-text: #DAF1DE;
 
   --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
   --font-mono: 'Space Grotesk', ui-monospace, monospace;
 
   --max-text: 68ch;
-  --max-page: 960px;
+  --max-page: 1400px;
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.75rem;
   --space-4: 3rem;
   --space-5: 5rem;
+}
+
+html.dark {
+  --color-bg: #051F20;
+  --color-bg-soft: #0B2B26;
+  --color-text: #DAF1DE;
+  --color-main: #8EB69B;
+  --color-border: #163832;
+  --color-surface: #0B2B26;
+  --color-accent-text: #DAF1DE;
 }
 
 * { box-sizing: border-box; }
@@ -35,6 +44,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4 {
@@ -76,7 +86,7 @@ button, .btn {
 .page {
   max-width: var(--max-page);
   margin: 0 auto;
-  padding: 0 var(--space-3);
+  padding: 0 clamp(1rem, 2vw, 2rem);
 }
 
 .section {
@@ -90,27 +100,28 @@ button, .btn {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--color-main);
-  background: var(--color-surface);
+  background: rgba(143, 182, 155, 0.12);
   border: 1px solid var(--color-border);
   padding: 0.15rem 0.55rem;
-  border-radius: 4px;
+  border-radius: 999px;
   margin-right: 0.4rem;
   margin-bottom: 0.4rem;
 }
 
 .btn-primary {
   display: inline-block;
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
   padding: 0.65rem 1.3rem;
-  border-radius: 6px;
-  border: 1px solid var(--color-text);
+  border-radius: 999px;
+  border: 1px solid var(--color-accent);
   font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 .btn-primary:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-text);
+  background: var(--color-border);
+  border-color: var(--color-border);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -118,11 +129,15 @@ button, .btn {
   background: transparent;
   color: var(--color-text);
   padding: 0.6rem 1.25rem;
-  border-radius: 6px;
+  border-radius: 999px;
   border: 1px solid var(--color-border);
   font-weight: 500;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.btn-secondary:hover { border-color: var(--color-accent); }
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
 
 .disabled-link {
   display: inline-block;

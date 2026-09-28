@@ -17,9 +17,11 @@ export default function Projects() {
 
       <section className="section" style={{ borderBottom: "none" }}>
         <div className="page">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+          <div className="projects-grid">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
           <a className="plain btn-primary" href={`mailto:${contactEmail}`}>
             Contact Me
           </a>
