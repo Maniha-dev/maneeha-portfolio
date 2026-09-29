@@ -3,6 +3,7 @@ import reactLogo from "./images/react.svg";
 import viteLogo from "./images/vite.svg";
 import favicon from "./images/favicon.svg";
 import iconsSprite from "./images/icons.svg";
+import bannerVideoWebm from "./banner.webm";
 import bannerVideo from "./banner.mp4";
 import { FaBrain, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 import {
@@ -17,7 +18,7 @@ import {
 } from "react-icons/si";
 
 // Edit these files to change the imported images used by the site.
-export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite, bannerVideo };
+export const assets = { hero, reactLogo, viteLogo, favicon, iconsSprite, bannerVideoWebm, bannerVideo };
 
 // Edit site-wide identity, contact, and browser metadata here.
 export const siteInfo = {
@@ -45,10 +46,10 @@ export const banner = {
     "I build full-stack MERN applications with working frontend, backend APIs, and database operations.",
   primaryAction: "Download CV",
   primaryHref: "#about",
-  secondaryAction: "Hire Me",
-  avatarBadge: "MERN • Golang • AI",
-  avatarInitial: "M",
-  avatarTag: "Available for opportunities",
+  secondaryAction: "Contact Me",
+  avatarBadge: "",
+  avatarInitial: "",
+  avatarTag: "",
 };
 
 // Edit social links here. Use type "email" to link to siteInfo.email.

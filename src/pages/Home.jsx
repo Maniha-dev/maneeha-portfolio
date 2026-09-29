@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "../components/ProjectCard";
 import { useTheme } from "../context/useTheme";
@@ -21,6 +22,7 @@ const featured = projects.filter((project) =>
 
 export default function Home() {
   const { theme } = useTheme();
+  const [videoFailed, setVideoFailed] = useState(false);
 
   return (
     <>
@@ -62,20 +64,29 @@ export default function Home() {
           </div>
 
           <div className="hero-visual" aria-hidden="true">
-            <div className="hero-glow hero-glow-one" />
-            <div className="hero-glow hero-glow-two" />
             <div className="avatar-card">
-              <video
-                className="avatar-video"
-                src={assets.bannerVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                onError={(event) => { event.currentTarget.style.display = "none"; }}
-                aria-hidden="true"
-              />
+              {!videoFailed && (
+                <video
+                  className="avatar-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  onError={() => setVideoFailed(true)}
+                  aria-hidden="true"
+                >
+                  <source src={assets.bannerVideoWebm} type="video/webm" />
+                  <source src={assets.bannerVideo} type="video/mp4" />
+                </video>
+              )}
+              {videoFailed && (
+                <div className="avatar-fallback">
+                  <div className="avatar-face">
+                    <span>{banner.avatarInitial}</span>
+                  </div>
+                </div>
+              )}
               <div className="avatar-video-content">
                 <div className="avatar-badge">{banner.avatarBadge}</div>
                 <div className="avatar-tag">{banner.avatarTag}</div>

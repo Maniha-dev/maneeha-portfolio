@@ -1,6 +1,6 @@
 .hero-shell {
-  padding-top: 8rem;
-  padding-bottom: 5rem;
+  padding-top: 0rem;
+  padding-bottom: 0;
   background: var(--color-bg);
   position: relative;
 }
@@ -92,32 +92,8 @@
   position: relative;
   min-height: 28rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-}
-
-.hero-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.28;
-  pointer-events: none;
-}
-
-.hero-glow-one {
-  width: 18rem;
-  height: 18rem;
-  background: var(--color-accent);
-  top: 1.5rem;
-  right: 2rem;
-}
-
-.hero-glow-two {
-  width: 15rem;
-  height: 15rem;
-  background: var(--color-main);
-  bottom: 0.5rem;
-  left: 2rem;
 }
 
 .avatar-card {
@@ -125,11 +101,7 @@
   z-index: 1;
   width: min(100%, 25rem);
   max-width: 400px;
-  border-radius: 2rem;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(11, 43, 38, 1), rgba(35, 83, 71, 0.9));
-  border: 1px solid var(--color-border);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+  background: var(--color-bg);
 }
 
 .avatar-badge {
@@ -148,8 +120,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: inherit;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .avatar-video-content {
@@ -160,6 +131,15 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1.25rem;
+  pointer-events: none;
+}
+
+.avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .avatar-face {
@@ -747,6 +727,10 @@
 }
 
 @media (max-width: 560px) {
+  .hero-visual {
+    display: none;
+  }
+
   .achievements-grid {
     padding: 0 1rem;
   }
