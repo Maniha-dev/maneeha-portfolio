@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 import { navLinks, siteInfo, uiText } from "../assets/assets";
 import { useTheme } from "../context/useTheme";
 import "./Navbar.css";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="navbar">
@@ -13,12 +16,17 @@ export default function Navbar() {
           &lt; {siteInfo.name.split(" ")[0]} /&gt;
         </NavLink>
 
-        <nav className="navbar-links" aria-label={uiText.navigationLabel}>
+        <nav
+          id="primary-navigation"
+          className={`navbar-links${menuOpen ? " is-open" : ""}`}
+          aria-label={uiText.navigationLabel}
+        >
           {navLinks.map((item) => (
             <NavLink
               key={item._id}
               to={item.to}
               end={item.to === "/"}
+              onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 "plain navbar-link" + (isActive ? " is-active" : "")
               }
@@ -50,6 +58,16 @@ export default function Navbar() {
           <a className="plain navbar-cta" href={`mailto:${siteInfo.email}`}>
             {uiText.contactAction}
           </a>
+          <button
+            type="button"
+            className="navbar-menu-toggle"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+          </button>
         </div>
       </div>
     </header>

@@ -727,6 +727,10 @@
 }
 
 @media (max-width: 560px) {
+  .hero-shell {
+    padding-bottom: 1.75rem;
+  }
+
   .hero-visual {
     display: none;
   }
