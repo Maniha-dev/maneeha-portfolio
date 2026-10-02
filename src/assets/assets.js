@@ -8,6 +8,7 @@ import ecommerceImage from "./images/ecommerce.png";
 import greenCartImage from "./images/greenChart.png";
 import silentLanguageImage from "./images/silentlanguage.png";
 import trippyWebImage from "./images/trippyWeb.png";
+import cyberSecureImage from "./images/cybersecure.png";
 import bannerVideoWebm from "./banner.webm";
 import bannerVideo from "./banner.mp4";
 import { FaBrain, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
@@ -150,7 +151,7 @@ export const projectsSection = {
   pageDescription:
     "A growing collection of real-world applications where I apply frontend, backend, APIs, databases, and deployment concepts while continuing to grow as a software engineer.",
   contactAction: "Contact Me",
-  featuredIds: ["stylic", "doctor-prescription", "ecommerce-store"],
+  featuredIds: ["stylic", "greencart", "ecommerce-store"],
 };
 
 // Edit project-card fallback and action labels here.
@@ -186,15 +187,44 @@ export const projects = [
     stack: [{ _id: "react", name: "React" }, { _id: "vite", name: "Vite" }, { _id: "node", name: "Node.js" }, { _id: "express", name: "Express.js" }, { _id: "mongodb", name: "MongoDB" }],
     status: "Completed", liveUrl: "https://stylic-pk.vercel.app/", repoUrl: "https://github.com/Maniha-dev/Stylic.pk", image: stylicImage,
   },
+   {
+_id: "greencart",
+name: "GreenCart",
+description: "A full-stack e-commerce application with user authentication, an admin dashboard, product management, cart functionality, and Stripe-based checkout.",
+stack: [
+{ _id: "react", name: "React" },
+{ _id: "vite", name: "Vite" },
+{ _id: "context-api", name: "Context API" },
+{ _id: "node", name: "Node.js" },
+{ _id: "express", name: "Express.js" },
+{ _id: "mongodb", name: "MongoDB" },
+{ _id: "stripe", name: "Stripe" }
+],
+status: "Completed",
+liveUrl: "https://green-cart-mern-ashen.vercel.app/",
+repoUrl: "https://github.com/Maniha-dev/Green-Chart-MERN",
+image: greenCartImage,
+},
+
+  
   {
-    _id: "doctor-prescription", name: "Doctor Prescription Project", description: null,
-    stack: [], status: "In Progress", liveUrl: null, repoUrl: null, image: null,
-  },
-  {
-    _id: "ecommerce-store", name: "Ecommerce-Store",
-    description: "A full-stack e-commerce store with frontend, backend, and MongoDB integration — including CRUD operations and order handling.",
-    stack: [], status: "Completed", liveUrl: "https://ecommerce-store-two-ivory.vercel.app/" , repoUrl: "https://github.com/Maniha-dev/Ecommerce-Store", image: ecommerceImage,
-  },
+_id: "ecommerce-store",
+name: "Ecommerce-Store",
+description: "A full-stack e-commerce application with product browsing, cart management, checkout, order handling, and Stripe payment integration. Built with a React frontend, Node.js and Express backend, and MongoDB for data management.",
+stack: [
+{ _id: "react", name: "React" },
+{ _id: "vite", name: "Vite" },
+{ _id: "node", name: "Node.js" },
+{ _id: "express", name: "Express.js" },
+{ _id: "mongodb", name: "MongoDB" },
+{ _id: "stripe", name: "Stripe" }
+],
+status: "Completed",
+liveUrl: "https://ecommerce-store-two-ivory.vercel.app/",
+repoUrl: "https://github.com/Maniha-dev/Ecommerce-Store",
+image: ecommerceImage,
+},
+
   {
 _id: "trippy-web",
 name: "TrippyWeb",
@@ -209,6 +239,21 @@ liveUrl: "https://trippy-web-two.vercel.app/",
 repoUrl: "https://github.com/Maniha-dev/TrippyWeb",
 image: trippyWebImage,
 },
+{
+_id: "cyber-secure",
+name: "CyberSecure",
+description: "An interactive cybersecurity awareness website built to make online safety easier to learn through practical guides, learning modules, and gamified quizzes. Covers phishing, strong passwords, safe browsing, fake news detection, and social media privacy, with a three-level interactive cybersecurity quiz.",
+stack: [
+{ _id: "html", name: "HTML5" },
+{ _id: "css", name: "CSS3" },
+{ _id: "javascript", name: "JavaScript" }
+],
+status: "Completed",
+liveUrl: "https://maniha-dev.github.io/Cyber-Secure/",
+repoUrl: "https://github.com/Maniha-dev/Cyber-Secure",
+image: cyberSecureImage,
+},
+
 
   {
     _id: "silent-language-coach", name: "Silent Language Coach", description: "AI-powered lip-reading app that converts silent video into text using Auto-AVSR, with optional Gemini-based context correction. Built with Python and Streamlit.",
@@ -219,14 +264,13 @@ image: trippyWebImage,
 { _id: "gemini", name: "Gemini API" }
 ], status: "Completed" , liveUrl: "http://lipreadin.streamlit.app/", repoUrl:"https://github.com/Maniha-dev/LipReadingAI", image: silentLanguageImage,
   },
-  { 
-    _id: "greencart", name: "GreenCart",
-    description: "A full-stack e-commerce application with user authentication, an admin dashboard, and Stripe-based checkout.",
-    stack: [{ _id: "react", name: "React" }, { _id: "context-api", name: "Context API" }, { _id: "node", name: "Node.js" }, { _id: "express", name: "Express.js" }, { _id: "mongodb", name: "MongoDB" }, { _id: "stripe", name: "Stripe" }],
-    status: "Completed", liveUrl: "https://green-cart-mern-ashen.vercel.app/", repoUrl: "https://github.com/Maniha-dev/Green-Chart-MERN", image: greenCartImage,
-  },
+ 
   {
     _id: "edupanda", name: "EduPanda", description: null,
     stack: [], status: null, liveUrl: null, repoUrl: null, image: null,
+  },
+  {
+    _id: "doctor-prescription", name: "Doctor Prescription Project", description: null,
+    stack: [], status: "In Progress", liveUrl: null, repoUrl: null, image: null,
   },
 ];
