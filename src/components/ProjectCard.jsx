@@ -15,14 +15,34 @@ export default function ProjectCard({ project }) {
   return (
     <article className="project-card">
       <div className="project-preview">
-        <img src={image || assets.hero} alt={`${name} ${projectCardText.previewAlt}`} />
+        {liveUrl ? (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="plain project-preview-link"
+            aria-label={`Open ${name} live site in a new tab`}
+          >
+            <img src={image || assets.hero} alt={`${name} ${projectCardText.previewAlt}`} />
+          </a>
+        ) : (
+          <img src={image || assets.hero} alt={`${name} ${projectCardText.previewAlt}`} />
+        )}
         {status && <span className="project-status">{status}</span>}
       </div>
 
       <div className="project-card-content">
         <div>
           <div className="project-card-head">
-            <h3>{name}</h3>
+            <h3>
+              {liveUrl ? (
+                <a href={liveUrl} target="_blank" rel="noreferrer" className="plain">
+                  {name}
+                </a>
+              ) : (
+                name
+              )}
+            </h3>
           </div>
 
           <p className="project-desc">
